@@ -5,40 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balcurt Modern Cyber</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="../uploads/school_content/logo/front_fav_icon-63ff863060bb30.36549342.jpg" type="image/x-icon">
+    <link href="../backend/themes/yellow/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../backend/themes/yellow/css/owl.carousel.css" rel="stylesheet">
+    <link href="../backend/themes/yellow/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../backend/themes/yellow/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../backend/themes/yellow/datepicker/bootstrap-datepicker3.css" />
+    <script src="../backend/themes/yellow/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var base_url = "../index.html";
+    </script>
 </head>
 
 <body>
-    <div class="contact">
-        <div class="contact">
-            <div class="form-box">
-                <p><img src="images/balcurt_logo.jpg" alt="">Balcurt Modern Cyber</p>
-                <h1 id="title">Contact Us</h1>
-                <form>
-                    <article>
-                        <div class="input-group">
-                            <div class="input-field" id="nameField">
-                                <input type="text" placeholder="Name" required>
-                            </div>
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                            <div class="input-field">
-                                <input type="text" placeholder="Subject" required>
-                            </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-                            <div class="input-field">
-                                <input type="textfield" placeholder="Message" required>
-                            </div>
-                        </div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
 
-                        <div class="btn-field">
-                            <button type="submit">Submit</button>
-                        </div>
-                    </article>
-                </form>
-            </div>
+            <button type="submit">Submit</button>
+        </form>
 
-        </div>
+
     </div>
+    <p id="successMessage"></p>
+    <script src="script.js"></script>
 
     <!--------------------------------this the footer of the website-------------------->
     <div class="footer1">
@@ -88,6 +88,22 @@
         </p>
 
     </footer>
+
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const successMessage = document.getElementById('successMessage');
+            if (name && email && message) {
+                successMessage.textContent = 'Thank you for contacting us!';
+                successMessage.style.display = 'block'; // Reset form document.getElementById('contactForm').reset();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
