@@ -1,14 +1,12 @@
             * {
                 margin: 0;
                 padding: 0;
-                box-sizing: border-box;
                 font-family: 'poppins', sans-serif, 'Times New Roman', Times, serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             }
             
             body {
                 background-color: rgb(251, 255, 240);
-                background-position: center;
-                width: 100%;
+                overflow: auto;
             }
             
             .social-media {
@@ -85,6 +83,14 @@
                 margin: auto;
                 text-align: left;
             }
+            
+            .header2 i {
+                color: #000;
+                display: flex;
+                size: 50px;
+                overflow: auto;
+                float: inline-start;
+            }
             /* design for the logo */
             
             .logo img {
@@ -115,23 +121,6 @@
                 text-decoration: none;
                 color: black;
                 font-weight: 100;
-            }
-            
-            .complain-1 ul {
-                float: block;
-                margin-left: 0%;
-                margin-right: auto;
-                text-decoration: none;
-                color: black;
-                font-weight: 100;
-            }
-            
-            .complain-1 i .fa-light {
-                float: left;
-                color: #000;
-                display: block;
-                size: 40px;
-                overflow: auto;
             }
             
             nav {
@@ -230,7 +219,7 @@
                 left: 0;
                 z-index: 20;
                 /* Ensures that the submenu is above other elements */
-                width: 200px;
+                width: 160px;
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             }
             
@@ -261,7 +250,7 @@
             .container1 ul li:hover .sub-menu-2,
             .container1 ul li:hover .sub-menu-3 {
                 display: block;
-                color: black;
+                color: rgb(133, 104, 104);
             }
             
             nav ul li a i {
@@ -306,6 +295,30 @@
                 flex: 1 0 100%;
                 scroll-snap-align: start;
                 object-fit: cover;
+            }
+            
+            .mySlides.active {
+                display: block;
+                animation: slideInRight 1s forwards;
+            }
+            /* Right-to-left sliding animation */
+            
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+            
+            @keyframes slideOutLeft {
+                from {
+                    transform: translateX(0);
+                }
+                to {
+                    transform: translateX(-100%);
+                }
             }
             /* Next & previous buttons */
             
@@ -360,7 +373,6 @@
             /* The dots/bullets/indicators */
             
             .dot {
-                cursor: auto;
                 height: 15px;
                 width: 15px;
                 margin: 0 2px;
@@ -551,7 +563,7 @@
                 background-color: #000;
             }
             
-            @media(maxi-width:400px) {
+            @media(maxi-width:100%) {
                 .footer1 {
                     display: flex;
                     flex-direction: column;
@@ -693,14 +705,14 @@
             .com-application p {
                 color: #ffffff;
                 font-size: 20px;
-                padding-top: 30px;
+                padding-top: 20px;
                 margin-left: 50px;
                 margin-right: 50px;
             }
             
             .com-application ol {
                 color: #ffffff;
-                font-size: 20px;
+                font-size: 18px;
                 margin-left: 90px;
             }
             /* ----------------------------for designing the kra  page---------------------------------------*/
@@ -1087,7 +1099,6 @@
                 border-radius: 8px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 text-align: center;
-                width: 100%;
                 background-image: linear-gradient(rgba(17, 12, 12, 0.5), black), url(images/comp2.jpg);
                 margin-top: 0;
                 background-position: center;
@@ -1148,16 +1159,16 @@
                 bottom: 0;
                 color: #ffffff;
                 font-size: 20px;
-                padding-top: 20px;
+                padding-top: 10px;
                 margin-left: 0;
                 background-color: #4cae4c;
             }
             
             .complain h2 {
                 text-align: left;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
                 margin-left: 100px;
-                margin-top: 20px;
+                margin-top: 10px;
             }
             
             .complain label {
@@ -1200,7 +1211,7 @@
             
             .complain p {
                 float: inline;
-                margin-top: 9px;
+                margin-top: 6px;
                 font-size: 30px;
                 font-family: 'Times New Roman', Times, serif;
                 text-align: center;
@@ -1348,4 +1359,42 @@
                     text-align: center;
                 }
             }
-            /* ----------------------------for designing the login page---------------------------------------*/
+            /* ----------------------------for designing the scroll button page---------------------------------------*/
+            /* Style the button */
+            
+            #scrollToTopBtn {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                /* Fixed position */
+                bottom: 20px;
+                /* Place the button 20px from the bottom */
+                left: 90%;
+                /* Center horizontally */
+                transform: translateX(50%);
+                /* Center the button horizontally */
+                z-index: 99;
+                /* Make sure it does not overlap other content */
+                border: none;
+                /* Remove borders */
+                outline: none;
+                /* Remove outline */
+                background-color: #555;
+                /* Set a background color */
+                color: white;
+                /* Text color */
+                cursor: pointer;
+                /* Add a pointer on hover */
+                padding: 10px 25px;
+                /* Some padding */
+                border-radius: 50px;
+                /* Rounded corners for a pill shape */
+                font-size: 18px;
+                /* Increase font size */
+            }
+            /* Style the button on hover */
+            
+            #scrollToTopBtn:hover {
+                background-color: #f00606;
+                /* Darker background on hover */
+            }
